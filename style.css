@@ -1,0 +1,161 @@
+:root {
+    --gcp-blue: #4285F4;
+    --gcp-green: #34A853;
+    --dark: #1a1a1a;
+    --light: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+/* --- Reset & Base Styles --- */
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background: #fdfdfd;
+    overflow-x: hidden;
+}
+
+/* --- Navigation (Glassmorphism) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--light);
+    letter-spacing: -1px;
+}
+
+.logo span { color: var(--gcp-green); }
+
+.nav-menu a {
+    color: var(--light);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover { color: var(--gcp-blue); }
+
+.nav-cta {
+    background: var(--dark);
+    padding: 10px 22px !important;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+/* --- Hero Section with Fixed Background --- */
+.hero-section {
+    height: 100vh;
+    /* High-res European Coast Image */
+    background: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+    position: relative;
+}
+
+.hero-overlay {
+    height: 100%;
+    /* Gradient for text readability */
+    background: linear-gradient(to right, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.2) 80%);
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-content { max-width: 700px; color: white; }
+
+.badge {
+    background: var(--gcp-green);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 20px 0; line-height: 1.1; }
+
+.highlight { color: var(--gcp-blue); }
+
+.hero-btns { margin-top: 35px; display: flex; gap: 20px; }
+
+.btn-primary {
+    background: var(--gcp-blue);
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* --- Information Cards --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 100px 8%;
+    background: white;
+}
+
+.info-card {
+    padding: 45px 35px;
+    border-radius: 20px;
+    background: #f8f9fa;
+    border-bottom: 5px solid var(--gcp-blue);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+.icon { font-size: 3rem; margin-bottom: 25px; }
+
+/* --- Footer --- */
+footer {
+    padding: 60px 8%;
+    background: #111;
+    color: #888;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .hero-content { text-align: center; }
+    .hero-overlay { justify-content: center; }
+    .hero-btns { justify-content: center; flex-direction: column; }
+}
